@@ -186,6 +186,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &8172728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -316,6 +317,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &27293651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -446,6 +448,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &95689046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -523,7 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100366545}
   - component: {fileID: 100366546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontMelee
   m_TagString: PlayerMelee
   m_Icon: {fileID: 0}
@@ -624,6 +627,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &131692268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -754,6 +758,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &177573274
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -884,6 +889,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &183092189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1014,6 +1020,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &201872768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1144,6 +1151,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &225957266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1274,6 +1282,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &243337209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1404,6 +1413,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &247074239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1481,7 +1491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270760352}
   - component: {fileID: 270760351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SideMelee
   m_TagString: PlayerMelee
   m_Icon: {fileID: 0}
@@ -2138,6 +2148,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &275039731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2268,6 +2279,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &276579846
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2398,6 +2410,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &285497995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2528,6 +2541,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &307539774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2658,6 +2672,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &327972959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2788,6 +2803,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 3
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &362744466
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2918,6 +2934,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &376283732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3048,6 +3065,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &395759402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3178,6 +3196,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &407397141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3308,6 +3327,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 8
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &416762433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3438,6 +3458,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &433192953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3568,6 +3589,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &436167570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3698,6 +3720,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &442810204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3828,6 +3851,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &466895687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3958,6 +3982,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 1
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &492635504
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4088,6 +4113,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &502906990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4218,6 +4244,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &510685137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4348,6 +4375,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 4
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &528997993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4478,6 +4506,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &533775206
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4608,6 +4637,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 1
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &565984388
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4738,6 +4768,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &581970319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4868,6 +4899,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &613645061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4998,6 +5030,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &635998352
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5128,6 +5161,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &636424351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5258,6 +5292,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &637386567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5388,6 +5423,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &652185689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5518,6 +5554,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &654563128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5648,6 +5685,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &661002406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5778,6 +5816,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &674728623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5908,6 +5947,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &701496852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6038,6 +6078,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &763592174
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6168,6 +6209,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 8
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &774968583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6298,6 +6340,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 5
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &798354194
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6428,6 +6471,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &810799083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6558,6 +6602,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &837970882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6688,6 +6733,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 3
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &843139371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6818,6 +6864,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &856543902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6948,6 +6995,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 2
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &876766531
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7078,6 +7126,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &931535977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7208,6 +7257,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &933770123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7338,6 +7388,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &950878616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7468,6 +7519,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &955696532
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7598,6 +7650,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1027701781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7728,6 +7781,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1035484930
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7858,6 +7912,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1056699716
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7988,6 +8043,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1073015740
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8118,6 +8174,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1088562056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8248,6 +8305,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1098904276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8325,7 +8383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1100855044}
   - component: {fileID: 1100855043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackMelee
   m_TagString: PlayerMelee
   m_Icon: {fileID: 0}
@@ -8426,6 +8484,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1108397034
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8556,6 +8615,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 6
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1132713389
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8686,6 +8746,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1177559893
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8816,6 +8877,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 6
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1177898377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8946,6 +9008,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1182745387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9076,6 +9139,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1256683737
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9206,6 +9270,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 7
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1275646745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9336,6 +9401,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1278396517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9466,6 +9532,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1289540948
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9596,6 +9663,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1318720943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9726,6 +9794,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1370550629
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9856,6 +9925,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1414504648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9986,6 +10056,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1446950849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10116,6 +10187,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1454811663
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10246,6 +10318,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1465292861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10376,6 +10449,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1483768271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10506,6 +10580,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1506263416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10636,6 +10711,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1509064643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10766,6 +10842,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1521489690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10896,6 +10973,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1539389659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11026,6 +11104,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1542364636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11201,6 +11280,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1584782696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11331,6 +11411,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1617842908
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11461,6 +11542,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 2
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1626522385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11591,6 +11673,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 5
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1658266990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11721,6 +11804,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 1
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1665938787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11851,6 +11935,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1671500457
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11981,6 +12066,7 @@ MonoBehaviour:
   widthIndex: 4
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1725318981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12111,6 +12197,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 4
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1738223150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12241,6 +12328,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1744726252
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12371,6 +12459,7 @@ MonoBehaviour:
   widthIndex: 2
   lengthIndex: 8
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1747945905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12501,6 +12590,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1762704502
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12631,6 +12721,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1784753133
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12761,6 +12852,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 6
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1827755730
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13023,6 +13115,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1831176240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13153,6 +13246,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1836747170
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13283,6 +13377,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 4
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1866191698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13413,6 +13508,7 @@ MonoBehaviour:
   widthIndex: 9
   lengthIndex: 2
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1872855516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13543,6 +13639,7 @@ MonoBehaviour:
   widthIndex: 0
   lengthIndex: 7
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1887371554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13673,6 +13770,7 @@ MonoBehaviour:
   widthIndex: 6
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1894298455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13803,6 +13901,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1907864631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13933,6 +14032,7 @@ MonoBehaviour:
   widthIndex: 3
   lengthIndex: 9
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &1958255876
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14063,6 +14163,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 3
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &1973373392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14992,6 +15093,7 @@ MonoBehaviour:
   widthIndex: 5
   lengthIndex: 5
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &2012258707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15122,6 +15224,7 @@ MonoBehaviour:
   widthIndex: 1
   lengthIndex: 1
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &2096828590
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15252,6 +15355,7 @@ MonoBehaviour:
   widthIndex: 7
   lengthIndex: 0
   heightIndex: 0
+  myCollider: {fileID: 0}
 --- !u!212 &2107309741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15334,7 +15438,7 @@ GameObject:
   - component: {fileID: 2108464108}
   - component: {fileID: 2108464110}
   - component: {fileID: 2108464109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15421,7 +15525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108464103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67, y: 0, z: 0}
+  m_LocalPosition: {x: -0.071, y: -0.302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15654,6 +15758,7 @@ MonoBehaviour:
   widthIndex: 8
   lengthIndex: 7
   heightIndex: 1
+  myCollider: {fileID: 0}
 --- !u!212 &2121229230
 SpriteRenderer:
   m_ObjectHideFlags: 0
