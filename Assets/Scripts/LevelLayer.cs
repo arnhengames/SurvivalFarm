@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class LevelLayer : MonoBehaviour
 {
-    public int myLayer = 0;
-    public CompositeCollider2D myCollider;
-    LevelBlock[] myBlocks;
+    public List<LevelBlock> blocks = new List<LevelBlock>();  
 
-    private void Start()
+    public void AddBlock(LevelBlock block)
     {
-        myCollider = GetComponent<CompositeCollider2D>();
-        myBlocks = GetComponentsInChildren<LevelBlock>();
+        blocks.Add(block);
     }
 
-    public void DisableColliders()
+    public LevelBlock GetBlock(int widthIndex, int lengthIndex)
     {
-        for (int i = 0; i < myBlocks.Length; i++)
+        foreach (LevelBlock block in blocks)
         {
-            myBlocks[i].myCollider.enabled = false;
+            if (block.widthIndex == widthIndex && block.lengthIndex == lengthIndex)
+            {
+                return block;
+            }
         }
-    }
 
-    public void EnableColliders()
-    {
-        for (int i = 0; i < myBlocks.Length; i++)
-        {
-            myBlocks[i].myCollider.enabled = true;
-        }
-    }
-
-    private void Update()
-    {
-        //Debug.Log("Layer " + myLayer + ": Collider is set to " + myCollider.isActiveAndEnabled);
+        return null;
     }
 }

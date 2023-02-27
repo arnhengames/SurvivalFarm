@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,10 +27,12 @@ public class PlayerController : MonoBehaviour
 
     public int currentLayer = 1;
 
-    LevelManager levelManager;
+    Vector3 targetPos;
 
     private void Start()
     {
+        targetPos = FindObjectOfType<LevelManager>().TransformPosToGridPos(transform.position, currentLayer);
+        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         myCollider = GetComponent<CircleCollider2D>(); 
@@ -37,52 +40,21 @@ public class PlayerController : MonoBehaviour
         notFlippedScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         flippedScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
-        levelManager = FindObjectOfType<LevelManager>();
-        levelManager.ChangeCollisionLayer(currentLayer);
     }
 
     void FixedUpdate()
     {
-        if (!isJumping)
-        {
-            HandleMovement();
-            HandleAttacking();
-        } 
-        else
-        {
-            HandleJumping();
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D col){
-        if (col.gameObject.tag == "Ground")
-        {
-            int layer = col.gameObject.GetComponent<LevelLayer>().myLayer;
-
-            if (layer == currentLayer)
-            {
-                Debug.Log("Jump Down");
-
-                currentLayer = currentLayer - 1;
-
-                levelManager.ChangeCollisionLayer(currentLayer);
-            }
-            else if (layer == currentLayer + 1)
-            {
-                Debug.Log("Jump Up");
-            }
-        }
-    }         
-    
-    void HandleJumping()
-    {
-
-    }
+        HandleMovement();
+        HandleAttacking();
+    }  
 
     void HandleMovement()
     {
-        rb.velocity = movement * playerSpeed;
+        //MOVING
+        targetPos += new Vector3(movement.x, movement.y, 0.0f) * playerSpeed * Time.deltaTime;
+        transform.position = FindObjectOfType<LevelManager>().TransformPosToGridPos(targetPos, currentLayer);
 
+        //ANIMATING
         if (!isAttacking)
         {
             if (movement != Vector2.zero)
@@ -186,4 +158,30 @@ public class PlayerController : MonoBehaviour
     {
         isAttacking = true;
     }
+
+    /*private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 startPos = new Vector3(0f, 0.24f, 0f);
+
+        startPos = LevelManager.StepLengthAxis(startPos, -50);
+
+        for (int i = 0; i < 100; i++)
+        {
+            Gizmos.DrawLine(LevelManager.StepWidthAxis(startPos, 100), LevelManager.StepWidthAxis(startPos, -100));
+            startPos = LevelManager.StepLengthAxis(startPos, 1);
+        }
+
+        Gizmos.color = Color.red;
+
+        startPos = new Vector3(0f, 0.24f, 0f);
+
+        startPos = LevelManager.StepWidthAxis(startPos, -50);
+
+        for (int i = 0; i < 100; i++)
+        {
+            Gizmos.DrawLine(LevelManager.StepLengthAxis(startPos, 100), LevelManager.StepLengthAxis(startPos, -100));
+            startPos = LevelManager.StepWidthAxis(startPos, 1);
+        }
+    }*/
 }
