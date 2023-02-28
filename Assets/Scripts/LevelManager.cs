@@ -9,19 +9,9 @@ public class LevelManager : MonoBehaviour
     float halfStep;
     float quarterStep;
 
-    public static List<LevelLayer> layers;
-
     void Start()
     {
         SetStepValues();
-
-        foreach(LevelLayer layer in layers)
-        {
-            foreach(LevelBlock block in layer.blocks)
-            {
-                Debug.Log(block);
-            }
-        }
     }
 
     public Vector3 TransformPosToGridPos(Vector3 inputPos, int hIndex)
@@ -54,10 +44,5 @@ public class LevelManager : MonoBehaviour
         trueDimension = spritePixelDimension * 0.01f;
         halfStep = trueDimension / 2f;
         quarterStep = trueDimension / 4f;
-    }
-
-    public void AddLayer(LevelLayer layer)
-    {
-        layers.Add(layer);
     }
 }

@@ -6,4 +6,5 @@ public class LevelBlock : MonoBehaviour
 {
     public int widthIndex;
     public int lengthIndex;
+    public int heightIndex;
 }

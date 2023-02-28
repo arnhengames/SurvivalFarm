@@ -7,35 +7,46 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Gameplay variables for editor
     [SerializeField] float playerSpeed = 3.0f;
 
-    [SerializeField] GameObject frontMeleeHitBox;
-    [SerializeField] GameObject sideMeleeHitBox;
-    [SerializeField] GameObject backMeleeHitBox;
-
+    //Components
     Rigidbody2D rb;
     Animator anim;
-    CircleCollider2D myCollider;
 
+    //Movement & Animation
     Vector2 movement;
     Vector3 flippedScale;
     Vector3 notFlippedScale;
     int direction = 0; //0 - forward, 1 - back, 2 - left, 3 - right
 
-    bool isAttacking = false;
-    bool isJumping = false;
+    //Grid Position Management
+    public Transform gridTracker;
+    public LayerMask baseLayer;
+    Collider2D lastGridCollider;
+    Collider2D currentGridCollider;
+    LevelBlock currentBlock;
 
+    //Height Position Management
     public int currentLayer = 1;
-
     Vector3 targetPos;
+
+    //Melee combat
+    [SerializeField] GameObject frontMeleeHitBox;
+    [SerializeField] GameObject sideMeleeHitBox;
+    [SerializeField] GameObject backMeleeHitBox;
+    bool isAttacking = false;
+
+    //Debug Info
+    public TMP_Text debugText1;
+
 
     private void Start()
     {
         targetPos = FindObjectOfType<LevelManager>().TransformPosToGridPos(transform.position, currentLayer);
         
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        myCollider = GetComponent<CircleCollider2D>(); 
+        anim = GetComponentInChildren<Animator>();
 
         notFlippedScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         flippedScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
@@ -46,6 +57,19 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleAttacking();
+
+        Collider2D currentGridCollider = Physics2D.OverlapCircle(gridTracker.position, 0.001f, baseLayer);
+
+        if (lastGridCollider != currentGridCollider)
+        {
+            currentBlock = currentGridCollider.gameObject.GetComponent<LevelBlock>();
+            lastGridCollider = currentGridCollider;
+        }
+
+        if (currentBlock != null)
+        {
+            debugText1.text = ("W: " + currentBlock.widthIndex + ", L: " + currentBlock.lengthIndex + ", H: " + -1);
+        }
     }  
 
     void HandleMovement()
@@ -158,30 +182,4 @@ public class PlayerController : MonoBehaviour
     {
         isAttacking = true;
     }
-
-    /*private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Vector3 startPos = new Vector3(0f, 0.24f, 0f);
-
-        startPos = LevelManager.StepLengthAxis(startPos, -50);
-
-        for (int i = 0; i < 100; i++)
-        {
-            Gizmos.DrawLine(LevelManager.StepWidthAxis(startPos, 100), LevelManager.StepWidthAxis(startPos, -100));
-            startPos = LevelManager.StepLengthAxis(startPos, 1);
-        }
-
-        Gizmos.color = Color.red;
-
-        startPos = new Vector3(0f, 0.24f, 0f);
-
-        startPos = LevelManager.StepWidthAxis(startPos, -50);
-
-        for (int i = 0; i < 100; i++)
-        {
-            Gizmos.DrawLine(LevelManager.StepLengthAxis(startPos, 100), LevelManager.StepLengthAxis(startPos, -100));
-            startPos = LevelManager.StepWidthAxis(startPos, 1);
-        }
-    }*/
 }

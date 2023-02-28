@@ -42,8 +42,6 @@ class LevelGenerator : EditorTool
                     newLayer.AddBlock(newBlock);
                 }
             }
-
-            FindObjectOfType<LevelManager>().AddLayer(newLayer);
         }
     }
 
