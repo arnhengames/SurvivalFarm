@@ -5,4 +5,6 @@ using UnityEngine;
 public class LevelNode : MonoBehaviour
 {
     public List<LevelBlock> blocks = new List<LevelBlock>();
+
+
 }

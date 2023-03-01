@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.AnimatedValues;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -41,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
     //Debug Info
     public TMP_Text debugText1;
-
 
     private void Start()
     {
