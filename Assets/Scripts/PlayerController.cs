@@ -26,10 +26,12 @@ public class PlayerController : MonoBehaviour
     Collider2D lastGridCollider;
     Collider2D currentGridCollider;
     LevelBlock currentBlock;
-
-    //Height Position Management
-    public int currentLayer = 1;
     Vector3 targetPos;
+
+    //Grid Trackers
+    public int wLoc = -1;
+    public int lLoc = -1;
+    public int hLoc = 0;
 
     //Melee combat
     [SerializeField] GameObject frontMeleeHitBox;
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        targetPos = FindObjectOfType<LevelManager>().TransformPosToGridPos(transform.position, currentLayer);
+        targetPos = FindObjectOfType<LevelManager>().TransformPosToGridPos(transform.position, hLoc);
         
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
@@ -57,26 +59,40 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleAttacking();
+        GridUpdate();
+        DebugInfo();
+    }  
 
+    void DebugInfo()
+    {
+        if (currentBlock != null)
+        {
+            debugText1.text = ("W: " + wLoc + ", L: " + lLoc + ", H: " + hLoc);
+        } else
+        {
+            Debug.Log("Null Block");
+        }
+    }
+
+    void GridUpdate()
+    {
         Collider2D currentGridCollider = Physics2D.OverlapCircle(gridTracker.position, 0.001f, baseLayer);
 
         if (lastGridCollider != currentGridCollider)
         {
             currentBlock = currentGridCollider.gameObject.GetComponent<LevelBlock>();
             lastGridCollider = currentGridCollider;
-        }
 
-        if (currentBlock != null)
-        {
-            debugText1.text = ("W: " + currentBlock.widthIndex + ", L: " + currentBlock.lengthIndex + ", H: " + -1);
+            wLoc = currentBlock.widthIndex;
+            lLoc = currentBlock.lengthIndex;
         }
-    }  
+    }
 
     void HandleMovement()
     {
         //MOVING
         targetPos += new Vector3(movement.x, movement.y, 0.0f) * playerSpeed * Time.deltaTime;
-        transform.position = FindObjectOfType<LevelManager>().TransformPosToGridPos(targetPos, currentLayer);
+        transform.position = FindObjectOfType<LevelManager>().TransformPosToGridPos(targetPos, hLoc);
 
         //ANIMATING
         if (!isAttacking)

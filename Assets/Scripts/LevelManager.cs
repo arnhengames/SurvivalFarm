@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] float spritePixelDimension = 32;
+    [SerializeField] float spritePixelDimension = 32f;
     float trueDimension;
     float halfStep;
     float quarterStep;
@@ -45,4 +45,9 @@ public class LevelManager : MonoBehaviour
         halfStep = trueDimension / 2f;
         quarterStep = trueDimension / 4f;
     }
+
+    /*public LevelBlock SearchForBlock(int wIndex, int lIndex, int hIndex)
+    {
+        return new LevelBlock();
+    }*/
 }

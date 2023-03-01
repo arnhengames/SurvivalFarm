@@ -8,40 +8,93 @@ using UnityEditor.EditorTools;
 [EditorTool("Level Generator")]
 class LevelGenerator : EditorTool
 {
+    static LevelManager levelManager;
+
     public static GameObject block;
 
-    public static int width = 20;
-    public static int length = 20;
-    public static int height = 1;
+    static int baseLayer = LayerMask.NameToLayer("BaseLayer");
 
-    static int sortOrder = -15000;
+    public static int width = 60;
+    public static int length = 60;
+    public static int height = 2;
+
+    public static int maxDimensions = 20;
+
+    static int sortOrder = -32767;
+    static int oneNode = 14399;
 
     [MenuItem("My Tools/Create Level")]
     static void CreateLevel()
     {
-        FindObjectOfType<LevelManager>().SetStepValues();
-
         block = Resources.Load<GameObject>("BasicBlock");
 
-        for (int k = 0; k < height; k++)
+        int nodesW = width / maxDimensions;
+        int nodesL = length / maxDimensions;
+
+        int remainderW = width - (nodesW * maxDimensions);
+        int remainderL = length - (nodesL * maxDimensions);
+
+        if (nodesW > 0) 
+        { 
+            width = maxDimensions; 
+        }
+
+        if (nodesL > 0) 
+        { 
+            length = maxDimensions; 
+        }
+
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.SetStepValues();
+
+        for (int nodeW = 0; nodeW < nodesW; nodeW++)
         {
-            LevelLayer newLayer = new LevelLayer();
-
-            for (int j = 0; j < width; j++)
+            for (int nodeL = 0; nodeL < nodesL; nodeL++)
             {
-                for (int i = 0; i < length; i++)
+                GameObject parentNode = new GameObject();
+                LevelNode levelNode = parentNode.AddComponent<LevelNode>();
+                parentNode.name = ("Node: " + nodeW + ", " + nodeL);
+
+                for (int k = 0; k < height; k++)
                 {
-                    GameObject newObj = GameObject.Instantiate(block, FindObjectOfType<LevelManager>().GridIndexToTransformPos(i, j, k), Quaternion.identity);
-                    newObj.GetComponent<SpriteRenderer>().sortingOrder = GetBlockSortingOrder();
-                    newObj.name = GetBlockName(i, j, k);
-
-                    LevelBlock newBlock = newObj.AddComponent<LevelBlock>();
-                    newBlock.widthIndex = i;
-                    newBlock.lengthIndex = j;
-
-                    newLayer.AddBlock(newBlock);
+                    for (int j = 0 + (nodeW * maxDimensions); j < width + (nodeW * maxDimensions); j++)
+                    {
+                        for (int i = 0 + (nodeL * maxDimensions); i < length + (nodeL * maxDimensions); i++)
+                        {
+                            if (k == 0)
+                            {
+                                CreateBlock(i, j, k, true, parentNode.transform, levelNode);
+                            }
+                            else
+                            {
+                                CreateBlock(i, j, k, false, parentNode.transform, levelNode);
+                            }
+                        }
+                    }
                 }
             }
+        }
+    }
+
+   static void CreateBlock(int wIndex, int lIndex, int hIndex, bool baseNode, Transform parent, LevelNode node)
+   {
+        GameObject newObj = GameObject.Instantiate(block, FindObjectOfType<LevelManager>().GridIndexToTransformPos(wIndex, lIndex, hIndex), Quaternion.identity, parent);
+        newObj.GetComponent<SpriteRenderer>().sortingOrder = GetBlockSortingOrder();
+        newObj.name = GetBlockName(wIndex, lIndex, hIndex);
+
+        LevelBlock newBlock = newObj.AddComponent<LevelBlock>();
+        newBlock.widthIndex = wIndex;
+        newBlock.lengthIndex = lIndex;
+        newBlock.heightIndex = hIndex;
+
+        node.blocks.Add(newBlock);
+
+        if (baseNode)
+        {
+            PolygonCollider2D blockCollider = newBlock.AddComponent<PolygonCollider2D>();
+            blockCollider.isTrigger = true;
+
+            newObj.layer = baseLayer;
         }
     }
 

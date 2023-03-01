@@ -18701,7 +18701,9 @@ MonoBehaviour:
   baseLayer:
     serializedVersion: 2
     m_Bits: 512
-  currentLayer: 0
+  wLoc: -1
+  lLoc: -1
+  hLoc: 0
   frontMeleeHitBox: {fileID: 100366544}
   sideMeleeHitBox: {fileID: 270760350}
   backMeleeHitBox: {fileID: 1100855042}
@@ -49329,7 +49331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 54.4, y: -15.3}
+  m_AnchoredPosition: {x: 54.400024, y: -15.299988}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207783284
@@ -79789,6 +79791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritePixelDimension: 16
+  blocks: []
 --- !u!4 &2040594368
 Transform:
   m_ObjectHideFlags: 0
