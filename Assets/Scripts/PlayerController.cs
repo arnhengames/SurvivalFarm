@@ -6,6 +6,18 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.InputSystem;
 
+public static class PlayerInfo
+{
+    public static int widthLocation = 0;
+    public static int lengthLocation = 0;
+    public static int heightLocation = 0;
+
+    public static string GetPositionString()
+    {
+        return ("W: " + widthLocation + ", L: " + lengthLocation + ", H: " + heightLocation);
+    }
+}
+
 public class PlayerController : MonoBehaviour
 {
     //Gameplay variables for editor
@@ -23,16 +35,7 @@ public class PlayerController : MonoBehaviour
 
     //Grid Position Management
     public Transform gridTracker;
-    public LayerMask baseLayer;
-    Collider2D lastGridCollider;
-    Collider2D currentGridCollider;
-    LevelBlock currentBlock;
     Vector3 targetPos;
-
-    //Grid Trackers
-    public int wLoc = -1;
-    public int lLoc = -1;
-    public int hLoc = 0;
 
     //Melee combat
     [SerializeField] GameObject frontMeleeHitBox;
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        targetPos = FindObjectOfType<LevelManager>().TransformPosToGridPos(transform.position, hLoc);
+        targetPos = LevelInfo.TransformPosToGridPos(transform.position, PlayerInfo.heightLocation);
         
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
@@ -60,39 +63,21 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleAttacking();
         GridUpdate();
-        DebugInfo();
     }  
-
-    void DebugInfo()
-    {
-        if (currentBlock != null)
-        {
-            debugText1.text = ("W: " + wLoc + ", L: " + lLoc + ", H: " + hLoc);
-        } else
-        {
-            Debug.Log("Null Block");
-        }
-    }
 
     void GridUpdate()
     {
-        Collider2D currentGridCollider = Physics2D.OverlapCircle(gridTracker.position, 0.001f, baseLayer);
+        PlayerInfo.widthLocation = -Mathf.FloorToInt(((gridTracker.transform.position.x / LevelInfo.halfStep) + (gridTracker.transform.position.y / LevelInfo.quarterStep)) * 0.5f);
+        PlayerInfo.lengthLocation = -Mathf.FloorToInt(((gridTracker.transform.position.y / LevelInfo.quarterStep) - (gridTracker.transform.position.x / LevelInfo.halfStep)) * 0.5f);
 
-        if (lastGridCollider != currentGridCollider)
-        {
-            currentBlock = currentGridCollider.gameObject.GetComponent<LevelBlock>();
-            lastGridCollider = currentGridCollider;
-
-            wLoc = currentBlock.widthIndex;
-            lLoc = currentBlock.lengthIndex;
-        }
+        debugText1.text = PlayerInfo.GetPositionString();
     }
 
     void HandleMovement()
     {
         //MOVING
         targetPos += new Vector3(movement.x, movement.y, 0.0f) * playerSpeed * Time.deltaTime;
-        transform.position = FindObjectOfType<LevelManager>().TransformPosToGridPos(targetPos, hLoc);
+        transform.position = LevelInfo.TransformPosToGridPos(targetPos, PlayerInfo.heightLocation);
 
         //ANIMATING
         if (!isAttacking)
