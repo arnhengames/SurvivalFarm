@@ -23,7 +23,7 @@ public class LevelEditor : MonoBehaviour
     TMP_Text gridSelectionDisplay;
 
     //Helper variables
-    float zoom = 18f;
+    float zoom = 20f;
     bool cameraPan = false;
 
     Vector2 movement = Vector2.zero;
@@ -39,6 +39,13 @@ public class LevelEditor : MonoBehaviour
     GridPosition[] selectedGridPositions;
     bool selectionMode = false;
 
+    int minDimension = -48;
+    int maxDimension = 47;
+    TMP_Text bottomRight;
+    TMP_Text bottomLeft;
+    TMP_Text topRight;
+    TMP_Text topLeft;
+
     private void Start()
     {
         myScene.Initialize();
@@ -47,10 +54,19 @@ public class LevelEditor : MonoBehaviour
         selectionBoxHeightIndicator = GameObject.Find("Selection Block Height Indicator");
         cam = GameObject.Find("MainCamera").GetComponent<Camera>(); 
         gridSelectionDisplay = GameObject.Find("Current Selection").GetComponent<TMP_Text>();
+        bottomRight = GameObject.Find("Bottom Right").GetComponent<TMP_Text>();
+        bottomLeft = GameObject.Find("Bottom Left").GetComponent<TMP_Text>();
+        topRight = GameObject.Find("Top Right").GetComponent<TMP_Text>();
+        topLeft = GameObject.Find("Top Left").GetComponent<TMP_Text>(); 
     }
 
     void FixedUpdate()
     {
+        bottomRight.text = maxDimension.ToString() + ", " + maxDimension.ToString();
+        bottomLeft.text = maxDimension.ToString() + ", " + minDimension.ToString();
+        topRight.text = minDimension.ToString() + ", " + maxDimension.ToString();
+        topLeft.text = minDimension.ToString() + ", " + minDimension.ToString();
+
         //Camera Control
         cam.orthographicSize = zoom;
 
@@ -67,11 +83,15 @@ public class LevelEditor : MonoBehaviour
                                         cam.transform.position.z);
         }
 
+        cam.transform.position = new Vector3(Mathf.Clamp(cam.transform.position.x, -30f, 30f), Mathf.Clamp(cam.transform.position.y, -20f, 20f), -10f);
+
         //Selection Control
         mouseGridPosition = LevelData.TransformPosToGridPos(cam.ScreenToWorldPoint(mousePos));
+        mouseGridPosition = new GridPosition(Mathf.Clamp(mouseGridPosition.w, minDimension, maxDimension), Mathf.Clamp(mouseGridPosition.l, minDimension, maxDimension));
 
         //If mousegridposition is on current grid
         currentGridSelection.AssignValues(mouseGridPosition, heightSelection);
+        gridSelectionDisplay.gameObject.SetActive(true);
         gridSelectionDisplay.text = currentGridSelection.GetValueString();
 
         selectionBoxNodeIndicator.transform.position = LevelData.GridIndexToTransformPos(currentGridSelection.w, currentGridSelection.l, 0);
@@ -85,39 +105,37 @@ public class LevelEditor : MonoBehaviour
 
             selectedGridPositions = GridPosition.GetArrayBetween(mouseStartingPosition, currentGridSelection);
             ShowSelection(selectedGridPositions);
-        } 
+        }
         else
         {
             selectionBoxNodeIndicator.SetActive(true);
             selectionBoxHeightIndicator.SetActive(true);
         }
-
-        cam.transform.position = new Vector3(Mathf.Clamp(cam.transform.position.x, -30f, 30f), Mathf.Clamp(cam.transform.position.y, -20f, 20f), -10f);
     }
 
     public void MouseLeftClick(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
         {
-            Debug.Log("Mouse pressed");
             selectionMode = true;
             mouseStartingPosition.AssignValues(currentGridSelection);
         }
 
         if (ctx.canceled)
         {
-            Debug.Log("Mouse released");
-
             selectionMode = false;
 
-            List<EditorBlock> placedBlocks = new List<EditorBlock>();
+            //Change to UPDATE SAVED LIST
+
+            /*List<EditorBlock> placedBlocks = new List<EditorBlock>();
 
             foreach (GridPosition grid in selectedGridPositions)
             {
                 placedBlocks.Add(PlaceNewBlock(grid, TileTypes.grassSprite));
             }
 
-            myScene.UpdateScene(placedBlocks.ToArray());
+            myScene.UpdateScene(placedBlocks.ToArray());*/
+
             ClearSelection();
         }
     }
@@ -178,7 +196,7 @@ public class LevelEditor : MonoBehaviour
     public void Zoom(InputAction.CallbackContext ctx)
     {
         zoom += ctx.ReadValue<float>() * -Time.fixedDeltaTime * 0.5f;
-        zoom = Mathf.Clamp(zoom, 2f, 18f);
+        zoom = Mathf.Clamp(zoom, 2f, 20f);
     }
 
     public void MousePos(InputAction.CallbackContext ctx)
