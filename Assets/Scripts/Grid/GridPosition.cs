@@ -82,6 +82,18 @@ public struct GridPosition
         }
     }
 
+    public static bool IsWithin(GridPosition toTest, int minW, int maxW, int minL, int maxL)
+    {
+        if ((toTest.w >= minW) && (toTest.w <= maxW) && (toTest.l >= minL) && (toTest.l <= maxL))
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
+    }
+
     public static GridPosition[] GetArrayBetween(GridPosition startPoint, GridPosition endPoint)
     {
         List<GridPosition> output = new List<GridPosition>();

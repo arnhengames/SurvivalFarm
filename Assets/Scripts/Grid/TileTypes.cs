@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class TileTypes
+public static class TileSprites
 {
-    public static GameObject basicBlock = Resources.Load<GameObject>("Prefabs/BasicBlock");
-
-    public static Sprite grassSprite = Resources.Load<Sprite>("Sprites/GrassBlock");
-    public static Sprite stoneSprite = Resources.Load<Sprite>("Sprites/StoneBlock");
-    public static Sprite snowSprite = Resources.Load<Sprite>("Sprites/SnowBlock");
+    public static Sprite[] grassRidge = Resources.LoadAll<Sprite>("Sprites/ridgetest");
 }
+
+public class TileType
+{
+    public GridPosition gridPosition;
+    public Sprite sprite;
+}
+
+

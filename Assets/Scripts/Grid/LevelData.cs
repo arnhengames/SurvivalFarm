@@ -3,8 +3,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelData", menuName = "Level Data", order = 1)]
 public class LevelData : ScriptableObject
 {
+    public static int[,,] sceneMap;
+
     static float halfStep = 0.32f;
     static float quarterStep = 0.16f;
+
+    public static void InitializeSceneMap(int sizeWidth, int sizeLength, int sizeHeight)
+    {
+        sceneMap = new int[sizeWidth, sizeLength, sizeHeight];
+    }
 
     public static Vector3 GridIndexToTransformPos(int wIndex, int lIndex, int hIndex)
     {

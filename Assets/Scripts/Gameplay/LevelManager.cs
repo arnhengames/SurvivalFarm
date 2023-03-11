@@ -140,6 +140,7 @@ public class LevelManager : MonoBehaviour
     {
         nodes = new List<LevelNode>();
 
+        GameObject basicBlock = Resources.Load<GameObject>("Prefabs/BasicBlock");
         GameObject activeLevelMap = GameObject.Find("Active Level Map");
 
         if (activeLevelMap != null)
@@ -168,7 +169,7 @@ public class LevelManager : MonoBehaviour
 
                 for (int k = 0; k < height; k++)
                 {
-                    CreateBlock(TileTypes.basicBlock, levelNode, k, parentNode.transform);
+                    CreateBlock(basicBlock, levelNode, k, parentNode.transform);
                 }
 
                 nodes.Add(levelNode);
